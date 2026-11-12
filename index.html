@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Share Your Contact</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; padding: 24px;
+      display: grid; place-items: center;
+      font-family: system-ui, Arial, sans-serif;
+      background: linear-gradient(145deg, #e9fff2, #f4f7fb);
+      color: #17231d;
+    }
+    .card {
+      width: min(100%, 430px); background: #fff; padding: 28px;
+      border-radius: 22px; box-shadow: 0 14px 45px rgba(20, 60, 40, .12);
+    }
+    .mark {
+      width: 58px; height: 58px; display: grid; place-items: center;
+      border-radius: 18px; background: #dcfce7; color: #128c4a;
+      font-size: 28px; margin-bottom: 16px;
+    }
+    h1 { margin: 0 0 8px; font-size: 26px; }
+    p { color: #617067; line-height: 1.5; }
+    label { display: block; font-weight: 650; margin: 18px 0 8px; }
+    input[type="tel"] {
+      width: 100%; padding: 14px; border: 1px solid #cbd5ce;
+      border-radius: 12px; font-size: 17px; outline-color: #16a34a;
+    }
+    .consent { display: flex; gap: 10px; align-items: flex-start; font-weight: 400; font-size: 14px; }
+    .consent input { margin-top: 3px; }
+    button {
+      width: 100%; margin-top: 18px; border: 0; border-radius: 12px;
+      padding: 15px; background: #16a34a; color: white;
+      font-size: 16px; font-weight: 700; cursor: pointer;
+    }
+    button:disabled { opacity: .6; cursor: wait; }
+    #status { min-height: 24px; font-size: 14px; margin-bottom: 0; }
+    .privacy { font-size: 12px; color: #77847c; margin-top: 18px; }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="mark" aria-hidden="true">✆</div>
+    <h1>Share Your Contact</h1>
+    <p>Enter your mobile number if you want to share it with the QR owner.</p>
+
+    <form id="contactForm">
+      <label for="phone">Indian mobile number</label>
+      <input id="phone" name="phone" type="tel" inputmode="numeric"
+             autocomplete="tel" placeholder="10-digit mobile number"
+             maxlength="16" required>
+
+      <label class="consent">
+        <input id="consent" type="checkbox" required>
+        <span>I agree to share my mobile number with the QR code owner.</span>
+      </label>
+
+      <button id="submitBtn" type="submit">Share my number</button>
+    </form>
+
+    <p id="status" role="status" aria-live="polite"></p>
+    <p class="privacy">Your number is sent to the owner only after you submit this form. It is not displayed publicly by this page.</p>
+  </main>
+
+  <script src="form.js"></script>
+</body>
+</html>

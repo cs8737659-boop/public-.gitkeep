@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Personal QR</title>
+  <style>
+    body { margin:0; min-height:100vh; display:grid; place-items:center; padding:20px; background:#f1f5f2; font-family:system-ui,Arial,sans-serif; color:#18251d; }
+    main { width:min(100%,430px); background:white; border-radius:20px; padding:24px; text-align:center; box-shadow:0 12px 36px #17351d18; }
+    input { width:100%; box-sizing:border-box; padding:13px; border:1px solid #cbd5ce; border-radius:10px; font-size:15px; }
+    button { padding:12px 18px; margin:12px 5px 0; border:0; border-radius:10px; background:#16a34a; color:white; font-weight:700; }
+    #qrcode { margin:20px auto; display:flex; justify-content:center; }
+    #qrcode img, #qrcode canvas { max-width:100%; height:auto; }
+    small { color:#64746a; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Your Personal QR</h1>
+    <p>This QR opens your public contact-sharing form.</p>
+    <input id="siteUrl" type="url" aria-label="Website URL" placeholder="https://your-site.example">
+    <div id="qrcode"></div>
+    <button id="makeQr">Create QR</button>
+    <button id="downloadQr">Download QR</button>
+    <p><small>Deploy the website first, then enter its public URL here. Do not use a private localhost address.</small></p>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
